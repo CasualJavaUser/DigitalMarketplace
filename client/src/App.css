@@ -1,0 +1,295 @@
+:root {
+  --dark1: #121821;
+  --dark2: #142e52;
+  --bright1: #2c63ae;
+  --bright3: #7d9ecc;
+  --bright2: #96b1d7;
+  --font-color: #e1e4e8;
+  --bright-red: #cc7d7d;
+  --bright-green: #93cc7d;
+  --disabled: #646464;
+  --warning: #ff1d1d;
+  --font: 15px 'Trebuchet MS', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark1);
+  font: var(--font);
+}
+
+header, nav {
+  background-color: var(--dark2);
+  color: var(--font-color);
+  padding: 15px;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+header > h1 {
+  margin: 8px;
+}
+
+nav {
+  display: flex;
+}
+
+#logo {
+  width: 60px;
+}
+
+#search-bar {
+  width: 500px;
+  font-size: 16px;
+  margin: 8px;
+}
+
+input, select, button {
+  padding: 8px;
+  font: var(--font);
+  background-color: var(--bright2);
+  color: var(--dark1);
+  border: 0 none;
+  border-radius: 2px;
+}
+
+button, input[type=submit] {
+  width: fit-content;
+}
+
+input:hover {
+  background-color: var(--bright3);
+}
+
+button:hover {
+  background-color: var(--bright3);
+}
+
+button:active {
+  background-color: var(--bright1);
+}
+
+button:disabled {
+  background-color: var(--disabled);
+}
+
+.global-actions {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.global-actions > a {
+  font-size: 20px;
+}
+
+.global-actions > * {
+  margin: 0 8px;
+}
+
+.tab:hover {
+  color: var(--bright2);
+}
+
+.tab:link {
+  text-decoration: none;
+}
+
+#main {
+  display: flex;
+}
+
+.container {
+  padding: 20px;
+  background-color: var(--dark2);
+  color: var(--font-color);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.center {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center > * {
+  margin: 8px;
+}
+
+#options {
+  margin-right: 0;
+  flex: 0 0 250px;
+  height: fit-content;
+}
+
+#options > input[type=number] {
+  width: 70px;
+  margin-right: 4px;
+}
+
+#options > * {
+  margin: 5px 0;
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: auto;
+}
+
+.product-card {
+  justify-self: stretch;
+  height: fit-content;
+}
+
+.product-card:hover {
+  background-color: var(--bright1);
+}
+
+#login-window {
+  margin: 150px auto;
+  width: fit-content;
+  text-align: center;
+}
+
+#login-window > input[type=text],
+#login-window > input[type=email],
+#login-window > input[type=password] {
+  width: 250px;
+}
+
+#login-window > * {
+  margin: 8px;
+}
+
+#login-window > button {
+  margin: 10px;
+}
+
+.product-img {
+  width: 100%;
+}
+
+.large-product-img {
+  width: 300px;
+}
+
+.small-product-img {
+  width: 150px;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.key-input > * {
+  margin-right: 8px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--bright-red);
+}
+
+.new-price {
+  color: var(--bright-green);
+}
+
+.warning {
+  color: var(--warning);
+}
+
+table, td, th {
+  border: 3px solid var(--dark1);
+  padding: 8px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bright2);
+  color: var(--dark1);
+}
+
+td > a:link,
+td > a:visited {
+  color: var(--dark1);
+}
+
+.form {
+  border: 3px solid var(--dark1);
+  padding: 8px;
+}
+
+.form > * {
+  margin: 8px;
+}
+
+#key-input {
+  width: 250px;
+}
+
+::placeholder {
+  color: var(--bright1);
+  opacity: 1;
+}
+
+a:link, a:visited {
+  color: var(--font-color);
+}
+
+.monospace {
+  font-family: 'Courier New', monospace;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.active_row {
+  background-color: var(--bright1);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px var(--bright2) inset !important;
+}
+
+@media screen and (max-width: 1280px) {
+  #product-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #product-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #product-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
